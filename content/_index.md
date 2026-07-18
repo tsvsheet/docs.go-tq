@@ -52,10 +52,10 @@ func main() {
 
 ## The model
 
-- **The first row is the header** by default; `Options.NoHeader` switches to positional-only references (`[N]`).
+- **The first row is the header** by default; `Options.IsHeaderless` switches to positional-only references (`[N]`).
 - **Columns, never cells.** Expressions reference columns as `[name]` or `[N]`; in stage positions bare identifiers work (`select name, stars`). Raw A1 references are rejected at plan time.
 - **Expressions are tsvsheet expressions** — same operators, functions, coercions, and error values, evaluated by the go-tsvsheet engine. The one syntactic difference: `|` always separates stages, so the formula pipe sugar is unavailable inside a tq expression.
-- **Values, not formulas.** When the input contains `=formula` cells, the sheet is computed first and the query sees computed values (`Options.Raw` skips this). A computed error value like `#DIV/0!` is data: it projects, sorts, and groups by its text — and under `Options.Strict` the first error value aborts the run instead.
+- **Values, not formulas.** When the input contains `=formula` cells, the sheet is computed first and the query sees computed values (`Options.IsRaw` skips this). A computed error value like `#DIV/0!` is data: it projects, sorts, and groups by its text — and under `Options.IsStrict` the first error value aborts the run instead.
 
 ## The verbs
 
