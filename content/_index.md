@@ -4,7 +4,7 @@ title: Home
 
 **The [tq](https://github.com/tsvsheet/tq) engine as an importable Go library.** tq is the query language of the tsvsheet ecosystem — a `|`-separated pipeline of relational verbs (`select`, `where`, `derive`, `sort`, `group`, …) over a TSV or [tsvt](https://github.com/tsvsheet/tsvsheet) table, with every embedded expression written in the tsvsheet formula language. `go-tq` parses a query, plans it against your table's header, and executes it — TSV in, TSV out — delegating every expression evaluation to the [go-tsvsheet](https://github.com/tsvsheet/go-tsvsheet) engine so a predicate in tq and a formula in a sheet can never disagree.
 
-The library is the one implementation of tq semantics, behind the [`tq`](https://github.com/tsvsheet/tq.go) CLI and [gloo-foo/cmd-tq](https://github.com/gloo-foo/cmd-tq). Import it to query tabular data from your own Go programs.
+The library is the one implementation of tq semantics, behind the [`tq`](https://github.com/tsvsheet/tq.go) CLI. Import it to query tabular data from your own Go programs.
 
 ## Install
 
