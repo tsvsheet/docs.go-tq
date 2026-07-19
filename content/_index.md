@@ -62,3 +62,7 @@ func main() {
 `select` · `drop` · `where` · `derive` · `rename` · `sort` (stable, typed total order, `-` descending) · `distinct` · `limit` · `offset` · `group … { name = aggregate, … }` — aggregates are ordinary tsvsheet functions (`sum`, `avg`, `counta`, …) over the group's column ranges. The language is specified normatively in the [tq](https://github.com/tsvsheet/tq) repo's SPECIFICATION.
 
 Every verb also exists as a Go constructor (`tq.Select`, `tq.Where`, `tq.GroupBy`, …) building the same `Program` values programmatically — parsed and built programs behave identically by contract.
+
+## Scope
+
+go-tq is not an analytical database. For heavy analytics over large value-only TSVs — joins, window functions, columnar scans — embed a SQL engine like [DuckDB](https://duckdb.org) instead; tq does not compete there. go-tq's value is being the tsvsheet ecosystem's query engine as an ordinary Go dependency: it computes `.tsvt` formulas before querying, evaluates predicates with the very engine the sheet uses, preserves raw cell text with no type inference, and embeds anywhere a Go library fits — no external database engine to carry.
