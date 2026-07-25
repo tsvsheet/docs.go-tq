@@ -1,0 +1,2 @@
+exempt:
+  artifact:docstyle: uses the shared tsvsheet visual system (github.com/tsvsheet/theme.tsvsheet Hugo module) instead of the fleet docs theme, so navigating here from tsvsheet.com stays visually consistent

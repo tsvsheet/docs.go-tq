@@ -16,6 +16,18 @@
     }
   },
   "params": {
-    "description": "go-tq \u2014 the tq TSV-query-language engine as an importable Go library."
+    "description": "go-tq — the tq TSV-query-language engine as an importable Go library.",
+    "mainSite": "https://tsvsheet.com"
+  },
+  "disableKinds": [
+    "taxonomy",
+    "term"
+  ],
+  "module": {
+    "imports": [
+      {
+        "path": "github.com/tsvsheet/theme.tsvsheet"
+      }
+    ]
   }
 }
